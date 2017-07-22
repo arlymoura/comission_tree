@@ -1,0 +1,16 @@
+version: '2'
+services:
+  db:
+    image: 'postgres:9.5'
+    volumes:
+      - 'postgres:/var/lib/postgresql/data'
+  website:
+    depends_on:
+      - 'db'
+    build: .
+    ports:
+      - '3000:3000'
+    volumes:
+      - '.:/ardom_manager'
+volumes:
+  postgres:
