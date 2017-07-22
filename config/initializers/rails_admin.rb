@@ -41,6 +41,8 @@ RailsAdmin.config do |config|
 
       field :notes
 
+      field :addresses
+
       field :manager_id, :hidden do
         default_value do
           bindings[:view]._current_user.id
