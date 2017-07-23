@@ -43,6 +43,12 @@ RailsAdmin.config do |config|
 
       field :addresses
 
+      field :password, :hidden do
+        default_value do
+          Devise.friendly_token.first(6)
+        end
+      end
+
       field :manager_id, :hidden do
         default_value do
           bindings[:view]._current_user.id

@@ -10,6 +10,7 @@ services:
     build: .
     ports:
       - '3000:3000'
+      - '587:587'
     volumes:
       - '.:/ardom_manager'
 volumes:
